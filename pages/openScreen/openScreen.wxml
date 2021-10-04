@@ -1,0 +1,4 @@
+<!--pages/openScreen/openScreen.wxml-->
+<view id="container">
+    <cover-image src="../../static/image/kaipingye.png"></cover-image>
+</view>

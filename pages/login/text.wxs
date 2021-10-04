@@ -1,0 +1,7 @@
+module.exports = {
+    ts: function(event, instance) {
+        var i = instance.selectComponent('.classSelector')
+        i.addClass('done')
+        return false
+    }
+}
