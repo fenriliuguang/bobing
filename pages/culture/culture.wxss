@@ -1,0 +1,14 @@
+/* pages/culture/culture.wxss */
+#background{
+    z-index: -1;
+    position:fixed; 
+    background-size:100% 100%;
+}
+
+#back{
+    position: absolute;
+    right: 30rpx;
+    top: 60rpx;
+    width: 70rpx;
+    height: 70rpx;
+}

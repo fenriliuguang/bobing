@@ -1,0 +1,9 @@
+<!--pages/home/home.wxml-->
+<view id="container">
+    <cover-image class="background" src="../../static/image/background.png"></cover-image>
+    <view id="btn_con">
+        <cover-image data-dd="0" bindtap="nextPage" bindtouchend="outs" bindtouchstart="onts"  class="btn {{isdone[0]?'done':''}}" src="../../static/image/btn1.png"></cover-image>
+        <cover-image data-dd="1" bindtap="nextPage" bindtouchend="outs" bindtouchstart="onts"  class="btn {{isdone[1]?'done':''}}" src="../../static/image/btn2.png"></cover-image>
+        <cover-image data-dd="2" bindtap="nextPage" bindtouchend="outs" bindtouchstart="onts"  class="btn {{isdone[2]?'done':''}}" src="../../static/image/btn3.png"></cover-image>
+    </view>
+</view>

@@ -1,19 +1,16 @@
 // app.js
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
+    wx.loadFontFace({
+      family: '汉仪尚魏手书',
+      source: "url('http://localhost:8080/HYShangWeiShouShuW.ttf')",
+      global: true
     })
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+    isLogin: false,
+    unionid: null,
+    openid: null
+  },
 })

@@ -1,0 +1,16 @@
+<!--pages/history/history.wxml-->
+<view>
+    <cover-image id="background" src="../../static/image/background_main.png"></cover-image>
+    <view id="back">
+        <cover-image bindtap="back" src="../../static/image/back.png"></cover-image>
+    </view>
+    <view id="userHistory">
+        <text>博饼次数：{{sum}}</text>
+        <text>状元次数：{{a}}</text>
+        <text>对堂次数：{{b}}</text>
+        <text>三红次数：{{c}}</text>
+        <text>四进次数：{{d}}</text>
+        <text>二举次数：{{e}}</text>
+        <text>一秀次数：{{f}}</text>
+    </view>
+</view>

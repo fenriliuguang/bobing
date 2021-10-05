@@ -33,24 +33,35 @@ Page({
                         avatarUrl :res.userInfo.avatarUrl,
                         isLogin: true
                     })
+                    setTimeout(()=>{
+                        wx.login({
+                            success: (res) => {
+                                if (res.code) {
+                                    wx.request({
+                                        // 登录接口
+                                        url: 'http://localhost:8080/login',
+                                        data: {
+                                            code: res.code
+                                        },
+                                        success: (r) => {
+                                            
+                                            var app = getApp()
+                                            app.globalData.isLogin = true
+                                            app.globalData.unionid = r.data.unionid
+                                            app.globalData.openid = 1234
+                                            app.globalData.userInfo = this.data.userInfo
+        
+                                            wx.redirectTo({
+                                                url: '/pages/home/home',
+                                            })
+                                        }
+                                    })
+                                }
+                            }
+                        })
+                    },1000)
                 }
             })
-
-            setTimeout(()=>{
-                wx.login({
-                    success: (res) => {
-                        if (res.code) {
-                            wx.request({
-                                // 登录接口
-                                url: 'http://localhost:8080/login',
-                                data: {
-                                    code: res.code
-                                }
-                            })
-                        }
-                    }
-                })
-            },1000)
         }
     },
 
