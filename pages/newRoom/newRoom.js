@@ -80,6 +80,7 @@ Page({
             // 返回房间id
             success: function(res){
                 app.globalData.myroom = res.data.roomid
+                app.globalData.ismaster = true
                 wx.redirectTo({
                   url: '/pages/room/room',
                 })
