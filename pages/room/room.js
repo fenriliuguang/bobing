@@ -1,61 +1,32 @@
-// pages/history/history.js
+// pages/room/room.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        sum:0,
-        a:0,
-        b:0,
-        c:0,
-        d:0,
-        e:0,
-        f:0
-    },
-    back : () => {
-        wx.redirectTo({
-          url: '/pages/home/home',
-        })
+        isconfig: false
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var app = getApp()
-        wx.request({
-          url: 'http://localhost:8080/history',
-          data: {
-            "openid":"2",//app.globalData.openid
-          },
-          method: "POST",
-          success: (res) => {
-              this.setData({
-                  "sum" : res.data.sum,
-                  "a": res.data.a,
-                  "b": res.data.b,
-                  "c":res.data.c,
-                  "d":res.data.d,
-                  "e":res.data.e,
-                  "f":res.data.f,
-              })
-          }
-        })
+
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-        wx.hideHomeButton()
+
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        wx.hideHomeButton()
     },
 
     /**

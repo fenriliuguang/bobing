@@ -11,6 +11,7 @@ App({
     userInfo: null,
     isLogin: false,
     unionid: null,
-    openid: null
+    openid: "test",
+    myroom: ""
   },
 })

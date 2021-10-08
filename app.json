@@ -1,5 +1,5 @@
 {
-    "entryPagePath": "pages/home/home",
+    "entryPagePath": "pages/room/room",
     "pages": [
         "pages/home/home",
         "pages/openScreen/openScreen",
@@ -7,7 +7,8 @@
         "pages/login/login",
         "pages/newRoom/newRoom",
         "pages/history/history",
-        "pages/culture/culture"
+        "pages/culture/culture",
+        "pages/room/room"
     ],
     "window": {
         "backgroundTextStyle": "light",

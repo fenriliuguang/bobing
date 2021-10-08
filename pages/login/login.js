@@ -48,7 +48,7 @@ Page({
                                             var app = getApp()
                                             app.globalData.isLogin = true
                                             app.globalData.unionid = r.data.unionid
-                                            app.globalData.openid = 1234
+                                            app.globalData.openid = r.data.openid
                                             app.globalData.userInfo = this.data.userInfo
         
                                             wx.redirectTo({

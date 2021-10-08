@@ -1,2 +1,18 @@
 <!--pages/newRoom/newRoom.wxml-->
-<text>pages/newRoom/newRoom.wxml</text>
+<view>
+    <cover-image id="background" src="../../static/image/newroom.png"></cover-image>
+    <view id="formbox">
+        <view class="row" wx:for="{{array}}" wx:for-index="index" wx:for-item="item">
+            <input class="form" data-index="{{index}}" bindblur="getvalue" placeholder="输入奖品"/>
+            <picker bindchange="bindPickerChange" data-index="{{index}}" class="form" value="{{item.amount}}" range="{{num}}">
+                <view>数量：{{num[item.amount]}}</view>
+            </picker>
+        </view>
+    </view>
+    <view id="back">
+        <cover-image bindtap="back" src="../../static/image/back.png"></cover-image>
+    </view>
+    <view id="build">
+        <cover-image class="{{isdone?'done':''}}" bindtap="build" bindtouchend="outs" bindtouchstart="onts" src="../../static/image/build.png"></cover-image>
+    </view>
+</view>

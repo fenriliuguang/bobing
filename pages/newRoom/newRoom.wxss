@@ -1,1 +1,50 @@
 /* pages/newRoom/newRoom.wxss */
+#background{
+    z-index: -1;
+    position:fixed; 
+    background-size:100% 100%;
+}
+
+.form {
+    height: 40rpx;
+    background-color: #fff;
+    border: 1rpx solid #707070;
+    border-radius: 5rpx;
+}
+
+.row {
+    height: 50rpx;
+    width: 500rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#formbox {
+    height: 1000rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 230rpx;
+    left: 200rpx;
+}
+
+#back{
+    position: absolute;
+    right: 30rpx;
+    top: 60rpx;
+    width: 70rpx;
+    height: 70rpx;
+}
+
+#build{
+    width: 460rpx;
+    position: absolute;
+    left: calc(50% - 230rpx);
+    bottom: 100rpx;
+}
+.done {
+    opacity: .4;
+}

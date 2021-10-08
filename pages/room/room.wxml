@@ -1,0 +1,13 @@
+<!--pages/room/room.wxml-->
+<view>
+    <cover-image id="background" src="../../static/image/room_b.png"></cover-image>
+    <view wx:if="!isconfig" id="icon">
+        <cover-image></cover-image>
+        <cover-image></cover-image>
+    </view>
+    <view wx:if="isconfig" id="config"></view>
+    <view id="players"></view>
+    <view id="touzi"></view>
+    <view id="time"></view>
+    <view class="btn"></view>
+</view>
