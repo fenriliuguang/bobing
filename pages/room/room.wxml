@@ -27,7 +27,7 @@
         <view style="font-family: '汉仪尚魏手书';color: gold;text-align: center;">状元榜</view>
         <scroll-view scroll-y="true" style="height: 300rpx;width: 200rpx;">
             <view wx:for="{{players}}" wx:for-index="i" wx:for-item="item">{{item.identity}}：{{item.name}}</view>
-            <view wx:if="{{canPlus}}">+ 邀请</view>
+            <view wx:if="{{canPlus}}"><button size="mini" open-type='share'>+ 邀请</button></view>
         </scroll-view>
     </view>
     <view id="playing">

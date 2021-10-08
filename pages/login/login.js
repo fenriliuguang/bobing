@@ -9,7 +9,9 @@ Page({
         isdone: false,
         userInfo: null,
         avatarUrl: getApp().globalData.host + "/static/image/wechat.png",
-        isLogin: false
+        isLogin: false,
+        isshare: false,
+        roomid : ""
     },
 
     onts: function(e){
@@ -51,10 +53,17 @@ Page({
                                             app.globalData.unionid = r.data.unionid
                                             app.globalData.openid = r.data.openid
                                             app.globalData.userInfo = this.data.userInfo
-        
-                                            wx.redirectTo({
-                                                url: '/pages/home/home',
-                                            })
+
+                                            if(this.data.isshare){
+                                                app.globalData.roomid = this.data.roomid
+                                                wx.redirectTo({
+                                                  url: '/pages/room/room',
+                                                })
+                                            }else {
+                                                wx.redirectTo({
+                                                    url: '/pages/home/home',
+                                                })
+                                            }
                                         }
                                     })
                                 }
@@ -70,7 +79,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
+        if(options.roomid != undefined){
+            this.setData({
+                isshare: true,
+                roomid: options.roomid
+            })
+        }
     },
 
     /**

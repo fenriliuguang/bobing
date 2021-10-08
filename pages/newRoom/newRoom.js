@@ -74,7 +74,7 @@ Page({
             method: "POST",
             data: {
                 openid : app.globalData.openid,
-                roomInfo : JSON.stringify(this.data.array)
+                roomInfo : this.data.array
             },
             dataType:"json",
             // 返回房间id
