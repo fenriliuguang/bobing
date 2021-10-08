@@ -1,6 +1,6 @@
 <!--pages/newRoom/newRoom.wxml-->
 <view>
-    <cover-image id="background" src="../../static/image/newroom.png"></cover-image>
+    <cover-image id="background" src="{{host}}/static/image/newroom.png"></cover-image>
     <view id="formbox">
         <view class="row" wx:for="{{array}}" wx:for-index="index" wx:for-item="item">
             <input class="form" data-index="{{index}}" bindblur="getvalue" placeholder="输入奖品"/>
@@ -10,9 +10,9 @@
         </view>
     </view>
     <view id="back">
-        <cover-image bindtap="back" src="../../static/image/back.png"></cover-image>
+        <cover-image bindtap="back" src="{{host}}/static/image/back.png"></cover-image>
     </view>
     <view id="build">
-        <cover-image class="{{isdone?'done':''}}" bindtap="build" bindtouchend="outs" bindtouchstart="onts" src="../../static/image/build.png"></cover-image>
+        <cover-image class="{{isdone?'done':''}}" bindtap="build" bindtouchend="outs" bindtouchstart="onts" src="{{host}}/static/image/build.png"></cover-image>
     </view>
 </view>

@@ -5,6 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        host : getApp().globalData.host,
         sum:0,
         a:0,
         b:0,

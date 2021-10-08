@@ -8,10 +8,13 @@ App({
     })
   },
   globalData: {
-    userInfo: null,
+    userInfo: {
+      avatarUrl: "http://localhost:8080/static/image/wechat.png"
+    },
     isLogin: false,
     unionid: null,
     openid: "test",
-    myroom: ""
+    myroom: "",
+    host:"http://localhost:8080"
   },
 })

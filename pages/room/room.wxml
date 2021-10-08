@@ -1,13 +1,50 @@
 <!--pages/room/room.wxml-->
 <view>
-    <cover-image id="background" src="../../static/image/room_b.png"></cover-image>
-    <view wx:if="!isconfig" id="icon">
-        <cover-image></cover-image>
-        <cover-image></cover-image>
+    <cover-image id="background" src="{{host}}/static/image/room_b.png"></cover-image>
+    <view wx:if="{{!isconfig && !ishelp}}" id="icon">
+        <cover-image bindtap="switchconfig" src="{{host}}/static/image/config.png"></cover-image>
+        <cover-image bindtap="switchhelp" src="{{host}}/static/image/help.png"></cover-image>
     </view>
-    <view wx:if="isconfig" id="config"></view>
-    <view id="players"></view>
-    <view id="touzi"></view>
-    <view id="time"></view>
-    <view class="btn"></view>
+    <view wx:if="{{isconfig}}" id="config">
+        <view style="padding: 10px;"><image bindtap="switchconfig" mode="widthFix" id="return" src="{{host}}/static/image/return.png"></image></view>
+        <view style="height: 100px;padding: 10px;">
+            <image mode="widthFix" id="myavatar" src="{{avatar}}"></image>
+            <text>用户信息</text>
+        </view>
+        <view style="padding: 10px;">
+            <text>声音</text>
+        </view>
+        <view style="padding: 10px;">托管</view>
+        <view bindtap="returnHome" style="padding: 10px;">退出</view>
+    </view>
+    <view wx:if="{{restouzi}}" id="ttt">
+        <text style="font-family: '汉仪尚魏手书';font-size: {{show[showIndex].size}};color: {{show[showIndex].color}};">{{show[showIndex].word}}</text>
+    </view>
+    <view bindtap="switchhelp" wx:if="{{ishelp}}" id="help">
+        <image  mode="widthFix" src="{{host}}/static/image/helppage.png"></image>
+    </view>
+    <view id="players">
+        <view style="font-family: '汉仪尚魏手书';color: gold;text-align: center;">状元榜</view>
+        <scroll-view scroll-y="true" style="height: 300rpx;width: 200rpx;">
+            <view wx:for="{{players}}" wx:for-index="i" wx:for-item="item">{{item.identity}}：{{item.name}}</view>
+            <view wx:if="{{canPlus}}">+ 邀请</view>
+        </scroll-view>
+    </view>
+    <view id="playing">
+        <image mode="widthFix" src="{{players[playing].avatar}}"></image>
+    </view>
+    <view wx:if="{{restouzi}}" id="touzi">
+        <image src="{{host}}/static/image/{{touzi[0]}}.png"></image>
+        <image src="{{host}}/static/image/{{touzi[1]}}.png"></image>
+        <image src="{{host}}/static/image/{{touzi[2]}}.png"></image>
+        <image src="{{host}}/static/image/{{touzi[3]}}.png"></image>
+        <image src="{{host}}/static/image/{{touzi[4]}}.png"></image>
+        <image src="{{host}}/static/image/{{touzi[5]}}.png"></image>
+    </view>
+    <view wx:if="{{isplay && ismyturn}}" class="play">
+        <image bindtap="shake" mode="widthFix" bindtouchend="outs" bindtouchstart="onts" class="{{isdone?'done':''}}" src="{{host}}/static/image/play.png"></image>
+    </view>
+    <view wx:if="{{ismaster && !isplay}}" class="play">
+        <image bindtap="begin" mode="widthFix" bindtouchend="outs" bindtouchstart="onts" class="{{isdone?'done':''}}" src="{{host}}/static/image/begin.png"></image>
+    </view>
 </view>

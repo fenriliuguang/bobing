@@ -1,7 +1,7 @@
 <!--pages/culture/culture.wxml-->
 <view>
-    <cover-image id="background" src="../../static/image/culture.png"></cover-image>
+    <cover-image id="background" src="{{host}}/static/image/culture.png"></cover-image>
     <view id="back">
-        <cover-image bindtap="back" src="../../static/image/back.png"></cover-image>
+        <cover-image bindtap="back" src="{{host}}/static/image/back.png"></cover-image>
     </view>
 </view>

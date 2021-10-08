@@ -5,6 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        host : getApp().globalData.host,
         unionid : null,
         userInfo : null,
         isdone: [false,false,false]

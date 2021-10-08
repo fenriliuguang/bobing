@@ -5,9 +5,10 @@ Page({
      * 页面的初始数据
      */
     data: {
+        host : getApp().globalData.host,
         isdone: false,
         userInfo: null,
-        avatarUrl: "../../static/image/wechat.png",
+        avatarUrl: getApp().globalData.host + "/static/image/wechat.png",
         isLogin: false
     },
 

@@ -1,6 +1,6 @@
 <!--pages/login/login.wxml-->
 <view id="container">
     <cover-image id="icon" src="{{avatarUrl}}"></cover-image>
-    <cover-image id="btn" bindtap="canLogin" bindtouchend="outs" bindtouchstart="onts" class="{{isdone?'done':''}}" src="../../static/image/button_login.png"></cover-image>
+    <cover-image id="btn" bindtap="canLogin" bindtouchend="outs" bindtouchstart="onts" class="{{isdone?'done':''}}" src="{{host}}/static/image/button_login.png"></cover-image>
 </view>
 
